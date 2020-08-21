@@ -3,7 +3,7 @@ import PySide2.QtGui
 import PySide2.QtCore
 
 import core.propConstraintCore
-import core.constants
+import bmApi.constants
 import propPoseSelector
 import maya.api.OpenMaya
 
@@ -302,7 +302,7 @@ class ConstraintTypeSelector(PySide2.QtWidgets.QGroupBox):
 
         self.constraintTypeCombBox = PySide2.QtWidgets.QComboBox()
 
-        for constraintType, constraintName in core.constants.MFN_CONSTRAINT_TYPES_TO_NAME_TYPES.iteritems():
+        for constraintType, constraintName in bmApi.constants.MFN_CONSTRAINT_TYPES_TO_NAME_TYPES.iteritems():
             self.constraintTypeCombBox.addItem(constraintName, constraintType)
             self.constraintTypeCombBox.setCurrentIndex(1)
 
@@ -433,7 +433,7 @@ class ConstraintAxes(PySide2.QtWidgets.QWidget):
 
         self.checkBoxList = []
 
-        for axis in core.constants.BASE_TRANSFORM_AXES:
+        for axis in bmApi.constants.BASE_TRANSFORM_AXES:
             subAxisCheckBox = PySide2.QtWidgets.QCheckBox(axis)
             subAxisCheckBox.setChecked(True)
             self.checkBoxList.append(subAxisCheckBox)
